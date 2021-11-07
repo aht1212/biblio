@@ -1,0 +1,102 @@
+
+
+  <button mat-raised-button
+  style="background-color: #0f172a ;
+  color: beige;" (click)="open(content)">Ajouter Auteur</button>
+
+  <br><br>
+<ng-template #content let-modal>
+  <mat-toolbar>
+  <div class="modal-header">
+    <h1 mat-dialog-title>Profile update</h1>
+
+  </div>
+</mat-toolbar>
+
+
+<div class="modal-body">
+<form class="example-form" [formGroup]="formvalue">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Nom</mat-label>
+    <input matInput value="Titre" formControlName="nom">
+  </mat-form-field>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Discipline</mat-label>
+      <input matInput formControlName="discipline" >
+    </mat-form-field></td>
+
+
+  </tr></table>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Date de naissance</mat-label>
+      <input matInput formControlName="date_naissance" type="date">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nationalite</mat-label>
+      <input matInput formControlName="nationalite" >
+    </mat-form-field></td>
+
+
+  </tr></table>
+
+
+</form>
+
+</div>
+<div class="modal-footer">
+  <td> <button id="addform" mat-raised-button type="submit" (click)="post_auteur()" *ngIf="showadd">Add</button>
+  </td><td><button id="updateform" mat-raised-button type="submit" (click)="update_auteur()" *ngIf="showupdate">Update</button>
+  </td>
+</div>
+</ng-template>
+
+
+
+<div class="container-fluid my-table">
+<mat-card class="container-fluid">
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Nom</th>
+    <th scope="col">Discipline</th>
+    <th scope="col">Date de naissance</th>
+    <th scope="col">Nationalite</th>
+
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of auteur">
+    <td>{{ item.id}}</td>
+    <td>{{ item.nom}}</td>
+    <td>{{ item.discipline}}</td>
+    <td>{{ item.date_naissance}}</td>
+    <td>{{ item.nationalite}}</td>
+
+    <td>
+      <button mat-mini-fab
+      style="background-color: #0f172a ; color: beige;"
+      (click)="onEdit(content, item)">
+        <mat-icon>edit</mat-icon>
+      </button> &nbsp;
+
+      <button mat-mini-fab  style="
+      background-color: #bf0000 ;
+      color: beige;"
+      (click)="delete_auteur(item)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+
+  </tr>
+  </tbody>
+</table>
+</mat-card>
+</div>
+

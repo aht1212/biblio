@@ -1,0 +1,81 @@
+{
+  "livre": [
+    {
+      "id": 3,
+      "titre": "kjjoj",
+      "isbn": 786876,
+      "langue": "KJHKU",
+      "annee": 2012,
+      "date_parution": "2021-11-03",
+      "img_couverture": "",
+      "auteur": [
+        {
+          "id": 0,
+          "nom": "likp",
+          "discipline": "pokjpi",
+          "nationalite": "kkkkk"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titre": "mjjpo",
+      "isbn": 7868766,
+      "langue": "lioiu",
+      "annee": 2012,
+      "date_parution": "2011-12-01",
+      "img_couverture": "",
+      "auteur": [
+        {
+          "id": 2,
+          "nom": "J. J. Rousseau",
+          "discipline": "Litterature",
+          "nationalite": "Française"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titre": "ihpi",
+      "isbn": 7899,
+      "langue": "lhlj",
+      "annee": 2012,
+      "date_parution": "2021-11-01",
+      "img_couverture": "",
+      "auteur": [
+        {
+          "id": 0,
+          "nom": "kjiji",
+          "discipline": "lkoj",
+          "nationalite": "okoj"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titre": "kjdezdz",
+      "isbn": 298397,
+      "langue": "jkdj",
+      "annee": 2012,
+      "date_parution": "2007-12-01",
+      "img_couverture": "",
+      "auteur": [
+        {
+          "id": 0,
+          "nom": "Ahmadou Hama TOURE",
+          "discipline": "mlzz",
+          "nationalite": "malienne"
+        }
+      ]
+    }
+  ],
+  "emprunt":[
+    {
+      "id": 1,
+      "emprunteur": "Mohamed",
+      "livre": "kjjoj",
+      "auteur": "likp",
+      "date": "2021-11-03"
+    }
+  ]
+}
