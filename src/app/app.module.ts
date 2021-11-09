@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FullwidthModule } from './layout/fullwidth/fullwidth.module';
 import { DefaultModule } from './layout/default/default.module';
 import { HomeComponent } from './modules/components/home/home.component';
-import { AuteurComponent } from './modules/components/auteur/auteur.component';
 import { EmpruntComponent } from './modules/components/emprunt/emprunt.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';

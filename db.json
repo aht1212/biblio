@@ -69,13 +69,25 @@
       ]
     }
   ],
-  "emprunt":[
+  "emprunt": [
     {
       "id": 1,
       "emprunteur": "Mohamed",
       "livre": "kjjoj",
       "auteur": "likp",
       "date": "2021-11-03"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "nom": "TOURE",
+      "prenom": "Ahmadou",
+      "email": "toureamadou1@gmail.com",
+      "poste": "mdr",
+      "role": "mdd",
+      "statut": "admin",
+      "pass": "lol"
     }
   ]
 }

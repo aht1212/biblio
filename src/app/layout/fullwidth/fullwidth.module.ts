@@ -4,16 +4,22 @@ import { FullwidthComponent } from './fullwidth.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
+import { MatInput, MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from 'src/app/modules/components/login/login.component';
+import { MatListModule } from '@angular/material/list';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
 @NgModule({
   declarations: [
-    FullwidthComponent
+    FullwidthComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +28,20 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatToolbarModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatListModule,
+    MatSelectModule
+
+  ],
+  exports:[
+    LoginComponent,
+    FullwidthComponent,
+
+
   ]
 })
 export class FullwidthModule { }

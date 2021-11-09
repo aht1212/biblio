@@ -12,14 +12,14 @@ import { MatCardModule } from '@angular/material/card'
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog'
-import { AuteurComponent } from '../components/auteur/auteur.component';
+import { UserComponent } from '../components/user/user.component';
 import { EmpruntComponent } from '../components/emprunt/emprunt.component';
 import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
     LivreComponent,
-    AuteurComponent,
+    UserComponent,
     EmpruntComponent
   ],
   imports: [
@@ -36,7 +36,6 @@ import { MatSelectModule } from '@angular/material/select';
     MatToolbarModule,
     MatDialogModule,
     MatSelectModule
-
   ],
   exports:[
     MatFormFieldModule,

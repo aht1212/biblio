@@ -15,7 +15,7 @@
 
 
 <div class="modal-body">
-<form class="example-form" >
+<form class="example-form" [formGroup]="formvalue">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Emprunteur</mat-label>
     <input matInput value="Titre" formControlName="emprunteur">
@@ -26,7 +26,7 @@
     <td><mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Livre</mat-label>
       <mat-select formControlName="nomlivre">
-        <mat-option *ngFor="let item in lol">{{item}}</mat-option>
+        <mat-option *ngFor="let item of titrelivre" [value]="item">{{ item }}</mat-option>
       </mat-select>
     </mat-form-field></td>
   </tr></table>
@@ -35,7 +35,7 @@
 
     <td><mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Date</mat-label>
-      <input matInput formControlName="date" type="date">
+      <input matInput formControlName="date_emprunt" type="date">
     </mat-form-field></td>
   </tr></table>
 
@@ -63,7 +63,7 @@
 
 <mat-card class="container-fluid">
 <table>
-  <thead>
+<thead>
   <tr>
     <th scope="col">#</th>
     <th scope="col">Emprunteur</th>

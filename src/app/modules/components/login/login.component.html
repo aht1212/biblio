@@ -1,1 +1,19 @@
-<p>login works!</p>
+<form [formGroup]="loginform">
+  <table fxFlexFill><tr><td>
+  <mat-form-field appearance="fill" fxFlexFill>
+    <mat-label>Email</mat-label>
+    <input matInput fxFill type="email" formControlName="email">
+  </mat-form-field></td></tr>
+  <tr>
+  <td>  <mat-form-field appearance="fill" fxFlexFill>
+    <mat-label>Mot de passe</mat-label>
+    <input matInput type="password" fxFlexFill formControlName="pass">
+  </mat-form-field></td>
+</tr>
+</table>
+<br>
+<div fxLayoutAlign="center end" fxFlexFill>
+<button mat-raised-button type="submit" color="primary" fxFlexFill fxLayoutAlign="center end" (click)="connexion()">Connexion </button>
+
+</div>
+</form>

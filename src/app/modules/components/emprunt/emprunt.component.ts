@@ -3,7 +3,7 @@ import { ApiService } from 'src/app/shared/api.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EmpruntModel } from './emprunt.model';
-import { getNameOfDeclaration } from 'typescript';
+import { getNameOfDeclaration, textChangeRangeIsUnchanged } from 'typescript';
 
 @Component({
   selector: 'app-emprunt',
@@ -11,7 +11,7 @@ import { getNameOfDeclaration } from 'typescript';
   styleUrls: ['./emprunt.component.scss']
 })
 export class EmpruntComponent implements OnInit {
-  livre !: any
+  titrelivre !: any
   table : string = 'livre'
   formvalue !: FormGroup
   showadd !: boolean
@@ -41,17 +41,15 @@ export class EmpruntComponent implements OnInit {
       emprunteur: [''],
       date_emprunt: ['']
     })
+
   }
 
 
- get_nameLivre(){
+ get_nameLivre(i : number){
     this.api.get_something(this.table).subscribe(res=>{
-      this.livre = res;
-         for (let i in this.livre) {
+      this.titrelivre = res[i].titre
 
-
-           console.log( this.livre[i].titre)
-     }
+      console.log(this.titrelivre);
 
     })
   }
