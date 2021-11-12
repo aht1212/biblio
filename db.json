@@ -71,11 +71,16 @@
   ],
   "emprunt": [
     {
-      "id": 1,
-      "emprunteur": "Mohamed",
-      "livre": "kjjoj",
-      "auteur": "likp",
-      "date": "2021-11-03"
+      "id": 2,
+      "nomlivre": "kjjoj",
+      "emprunteur": "Moi",
+      "date_emprunt": "2021-11-11"
+    },
+    {
+      "id": 3,
+      "nomlivre": "mjjpo",
+      "emprunteur": "Moussa Djiga",
+      "date_emprunt": "2021-11-11"
     }
   ],
   "user": [

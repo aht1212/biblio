@@ -16,35 +16,54 @@
 
 <div class="modal-body">
 <form class="example-form" [formGroup]="formvalue">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Emprunteur</mat-label>
-    <input matInput value="Titre" formControlName="emprunteur">
-  </mat-form-field>
+
+  <!-- <input matInput formControlName="emprunteur" type="text" class="form-control" placeholder="Emprunteur" aria-label="Emprunteur">
+  <table class="example-full-width" cellspacing="0"><tr>
+
+    <div>
+      <label class="input-group-text" for="inputGroupSelect01">Livre</label>
+      <select formControlName="nomlivre"  class="form-select" aria-label="Default select example">
+        <option *ngFor="let item of titrelivre" [value]="item.titre" >{{ item.titre}}</option>
+      </select>
+    </div> </table>
 
   <table class="example-full-width" cellspacing="0"><tr>
 
-    <td><mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Livre</mat-label>
-      <mat-select formControlName="nomlivre">
-        <mat-option *ngFor="let item of titrelivre" [value]="item">{{ item }}</mat-option>
-      </mat-select>
-    </mat-form-field></td>
+    <td>
+      <input matInput formControlName="date_emprunt" type="date" class="form-control" aria-label="date">
+    </td>
   </tr></table>
 
-  <table class="example-full-width" cellspacing="0"><tr>
+    <input matInput value="nom" formControlName="auteur" type="text" class="form-control" placeholder="Auteur" aria-label="Auteur">
+ -->
 
-    <td><mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Date</mat-label>
-      <input matInput formControlName="date_emprunt" type="date">
-    </mat-form-field></td>
-  </tr></table>
+ <div class="input-group mb-3"  >
+  <span class="input-group-text"> name</span>
+  <input type="text" aria-label="Last name" class="form-control" formControlName="emprunteur">
+</div>
 
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Auteur</mat-label>
-    <input matInput value="nom" formControlName="auteur">
-  </mat-form-field>
+<div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupSelect01">Livre</label>
+  <select class="form-select" id="inputGroupSelect01"  formControlName="nomlivre">
+    <option selected>None</option>
+    <option *ngFor="let item of titrelivre" [value]="item.titre" >{{ item.titre}}</option>
 
+  </select>
+</div>
 
+<div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupSelect01">Date Emprunt</label>
+  <input type="date" aria-label="Date Emprunt" class="form-control" formControlName="date_emprunt">
+</div>
+
+<!-- <div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupSelect01">Auteur</label>
+  <select class="form-select" id="inputGroupSelect01" formControlName="auteur">
+    <option selected>Choose...</option>
+    <option *ngFor="let item of titrelivre" [value]="item.auteur" ><span *ngFor="let i of item.auteur">{{ i.nom }}</span></option>
+
+  </select>
+</div> -->
 
 
 
@@ -52,9 +71,9 @@
 
 </div>
 <div class="modal-footer">
-  <!-- <td> <button id="addform" mat-raised-button type="submit" (click)="post_livre()" *ngIf="showadd">Add</button>
-  </td><td><button id="updateform" mat-raised-button type="submit" (click)="update_livre()" *ngIf="showupdate">Update</button>
-  </td> -->
+  <td> <button id="addform" mat-raised-button type="submit" (click)="post_emprunt()" *ngIf="showadd">Add</button>
+  </td><td><button id="updateform" mat-raised-button type="submit" (click)="update_emprunt()" *ngIf="showupdate">Update</button>
+  </td>
 </div>
 </ng-template>
 
@@ -69,28 +88,27 @@
     <th scope="col">Emprunteur</th>
     <th scope="col">Livre</th>
     <th scope="col">Date</th>
-    <th scope="col">Auteur</th>
     <th scope="col">Action</th>
   </tr>
   </thead>
-  <!-- <tbody>
-  <tr *ngFor="let item ">
+  <tbody>
+  <tr *ngFor="let item of emprunt">
     <td>{{ item.id}}</td>
     <td>{{ item.emprunteur}}</td>
-    <td>{{ item.livre}}</td>
-    <td>{{ item.date}}</td>
+    <td>{{ item.nomlivre}}</td>
+    <td>{{ item.date_emprunt}}</td>
 
-    <td>{{ item.auteur }}</td>
     <td>
       <button mat-mini-fab
       style="background-color: #0f172a ; color: beige;"
-      >
+      (click)="onEdit(content, item)">
         <mat-icon>edit</mat-icon>
       </button> &nbsp;
 
       <button mat-mini-fab  style="
       background-color: #bf0000 ;
       color: beige;"
+      (click)="delete_emprunt(item)"
 
       >
         <mat-icon>delete</mat-icon>
@@ -98,7 +116,7 @@
     </td>
 
   </tr>
-  </tbody> -->
+  </tbody>
 </table>
 </mat-card>
 

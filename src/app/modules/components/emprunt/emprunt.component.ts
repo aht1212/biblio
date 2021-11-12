@@ -12,17 +12,19 @@ import { getNameOfDeclaration, textChangeRangeIsUnchanged } from 'typescript';
 })
 export class EmpruntComponent implements OnInit {
   titrelivre !: any
-  table : string = 'livre'
+  table : string = 'emprunt';
+  livre :  string = 'livre'
   formvalue !: FormGroup
   showadd !: boolean
   showupdate !: boolean
   closeResult = '';
+  auteur !: any
+  emprunt !: any
 
 
   EmpruntModel : EmpruntModel = {
     id: 0,
     nomlivre: '',
-    auteur:'',
     emprunteur: '',
     date_emprunt: ''
   }
@@ -37,20 +39,96 @@ export class EmpruntComponent implements OnInit {
 
     this.formvalue = this.formbuilder.group({
       nomlivre: [''],
-      auteur: [''],
       emprunteur: [''],
       date_emprunt: ['']
     })
 
+    this.get_nameLivre()
+    this.get_emprunt()
+  }
+
+ get_nameLivre(){
+    this.api.get_something(this.livre).subscribe(res=>{
+    this.titrelivre = res
+    })
+
+  }
+
+  get_emprunt(){
+    this.api.get_something(this.table).subscribe(res=>{
+    this.emprunt = res
+    })
+
+  }
+
+  delete_emprunt(row : any){
+
+    this.api.delete_something(row.id, this.table).subscribe(res=>{
+      alert('emprunt supprimé !!')
+      this.get_emprunt()
+    }, err=>{
+      alert('Erreur!!!!!!!')
+    }
+    )
   }
 
 
- get_nameLivre(i : number){
-    this.api.get_something(this.table).subscribe(res=>{
-      this.titrelivre = res[i].titre
+  post_emprunt(){
+    this.EmpruntModel.nomlivre = this.formvalue.value.nomlivre;
+    this.EmpruntModel.emprunteur = this.formvalue.value.emprunteur;
+    this.EmpruntModel.date_emprunt = this.formvalue.value.date_emprunt;
 
-      console.log(this.titrelivre);
 
+
+
+
+
+    this.api.post_something(this.EmpruntModel,this.table).subscribe(res=>{
+      console.log(res);
+      alert('emprunt ajouté');
+      this.formvalue.reset()
+      this.get_emprunt()
+    },err=>{
+      alert('Une erreur')
+    })
+  }
+
+
+  onEdit(content: any, row : any){
+    this.showupdate=true;
+    this.showadd=false;
+
+
+    this.EmpruntModel.id = row.id
+    this.formvalue.controls['nomlivre'].setValue(row.nomlivre);
+    this.formvalue.controls['emprunteur'].setValue(row.emprunteur);
+    this.formvalue.controls['date_emprunt'].setValue(row.date_emprunt);
+
+
+
+
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  update_emprunt(){
+    this.EmpruntModel.nomlivre = this.formvalue.value.nomlivre;
+    this.EmpruntModel.emprunteur = this.formvalue.value.emprunteur;
+    this.EmpruntModel.date_emprunt = this.formvalue.value.date_emprunt;
+
+
+
+    console.log(this.EmpruntModel.id)
+    this.api.update_something(this.EmpruntModel,this.EmpruntModel.id,this.table).subscribe(res=>{
+      console.log(res);
+      this.formvalue.reset()
+      alert('emprunt modifié');
+      this.get_emprunt()
+    },err=>{
+      alert('Une erreur')
     })
   }
 
