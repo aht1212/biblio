@@ -7,12 +7,14 @@ import { HomeComponent } from './modules/components/home/home.component';
 import { LivreComponent } from './modules/components/livre/livre.component';
 import { LoginComponent } from './modules/components/login/login.component';
 import { FullwidthComponent } from './layout/fullwidth/fullwidth.component';
+import { AuthGuard } from './shared/auth/auth.guard';
 
 const routes: Routes = [
   {path: '',
    component: DefaultComponent,
+    canActivate: [AuthGuard],
    children: [{
-     path: 'home',
+     path: '',
      component: HomeComponent
    },
   {

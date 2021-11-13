@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { UserComponent } from '../components/user/user.component';
 import { EmpruntComponent } from '../components/emprunt/emprunt.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatExpansionModule } from '@angular/material/expansion'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatSelectModule } from '@angular/material/select';
     FlexLayoutModule,
     MatToolbarModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatExpansionModule
   ],
   exports:[
     MatFormFieldModule,

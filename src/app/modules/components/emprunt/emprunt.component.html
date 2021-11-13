@@ -15,55 +15,55 @@
 
 
 <div class="modal-body">
-<form class="example-form" [formGroup]="formvalue">
+<form class="example-form row g-3" [formGroup]="formvalue" >
 
-  <!-- <input matInput formControlName="emprunteur" type="text" class="form-control" placeholder="Emprunteur" aria-label="Emprunteur">
-  <table class="example-full-width" cellspacing="0"><tr>
+  <div class="form-floating col-md-6">
+    <input class="form-control" id="floatingInput" placeholder="Noms det prenom" formControlName="nom">
+    <label for="floatingInput">Nom</label>
+  </div>
+  <div class="form-floating col-md-6">
+    <input type="tel" class="form-control" id="floatingPassword" placeholder="N° de telephone" formControlName="telephone">
+    <label for="floatingPassword">Telephone</label>
+  </div>
 
-    <div>
-      <label class="input-group-text" for="inputGroupSelect01">Livre</label>
-      <select formControlName="nomlivre"  class="form-select" aria-label="Default select example">
-        <option *ngFor="let item of titrelivre" [value]="item.titre" >{{ item.titre}}</option>
-      </select>
-    </div> </table>
+  <div class="form-floating col-md-6">
+    <input type="date" class="form-control" id="floatingInput" placeholder="Date de naissance" formControlName="date_naissance">
+    <label for="floatingInput">Date de naissance</label>
+  </div>
+  <div class="form-floating col-md-6">
+    <select class="form-select" id="floatingSelect" aria-label="Genre" formControlName="genre">
+      <option value="Masculin">Masculin</option>
+      <option value="Feminin">Feminin</option>
+         </select>
+    <label for="floatingSelect">Genre</label>
+  </div>
 
-  <table class="example-full-width" cellspacing="0"><tr>
 
-    <td>
-      <input matInput formControlName="date_emprunt" type="date" class="form-control" aria-label="date">
-    </td>
-  </tr></table>
+  <div class="form-floating mb-3">
+    <input class="form-control" id="floatingInput" placeholder="Adresse" formControlName="adresse">
+    <label for="floatingInput">Adresse</label>
+  </div>
 
-    <input matInput value="nom" formControlName="auteur" type="text" class="form-control" placeholder="Auteur" aria-label="Auteur">
- -->
+  <div class="form-floating mb-3">
+    <select class="form-select" id="floatingSelect" aria-label="Genre" formControlName="nomlivre">
+      <option *ngFor="let item of titrelivre" [value]="item.titre" >{{ item.titre}}</option>
+    </select>
+    <label for="floatingSelect">Titre</label>
+  </div>
+  <div class="form-floating col-md-6">
+    <input type="datetime-local" class="form-control" id="floatingInput" placeholder="Date de de l'emprunt" formControlName="date_emprunt">
+    <label for="floatingInput">Date de de l'emprunt</label>
+  </div>
+  <div class="form-floating col-md-6">
+    <input type="date" class="form-control" id="floatingInput" placeholder="Date de de retour prévu" formControlName="date_retour">
+    <label for="floatingInput">Date de de retour prévu</label>
+  </div>
 
- <div class="input-group mb-3"  >
-  <span class="input-group-text"> name</span>
-  <input type="text" aria-label="Last name" class="form-control" formControlName="emprunteur">
-</div>
+  <div class="form-floating">
+    <textarea class="form-control" placeholder="Remarque sur le livre" id="floatingTextarea" formControlName="remarque_livre"></textarea>
+    <label for="floatingTextarea">Remarque</label>
+  </div>
 
-<div class="input-group mb-3">
-  <label class="input-group-text" for="inputGroupSelect01">Livre</label>
-  <select class="form-select" id="inputGroupSelect01"  formControlName="nomlivre">
-    <option selected>None</option>
-    <option *ngFor="let item of titrelivre" [value]="item.titre" >{{ item.titre}}</option>
-
-  </select>
-</div>
-
-<div class="input-group mb-3">
-  <label class="input-group-text" for="inputGroupSelect01">Date Emprunt</label>
-  <input type="date" aria-label="Date Emprunt" class="form-control" formControlName="date_emprunt">
-</div>
-
-<!-- <div class="input-group mb-3">
-  <label class="input-group-text" for="inputGroupSelect01">Auteur</label>
-  <select class="form-select" id="inputGroupSelect01" formControlName="auteur">
-    <option selected>Choose...</option>
-    <option *ngFor="let item of titrelivre" [value]="item.auteur" ><span *ngFor="let i of item.auteur">{{ i.nom }}</span></option>
-
-  </select>
-</div> -->
 
 
 
@@ -87,16 +87,34 @@
     <th scope="col">#</th>
     <th scope="col">Emprunteur</th>
     <th scope="col">Livre</th>
-    <th scope="col">Date</th>
+    <th scope="col">Date de l'emprunt</th>
+    <th scope="col">Date de retour</th>
+    <th scope="col">Remarque sur livre</th>
+
     <th scope="col">Action</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let item of emprunt">
     <td>{{ item.id}}</td>
-    <td>{{ item.emprunteur}}</td>
+    <td><mat-expansion-panel>
+      <mat-panel-title></mat-panel-title>
+      <mat-expansion-panel-header><div>{{ item.emprunteur[0].nom}}</div></mat-expansion-panel-header>
+      <div><mat-divider></mat-divider>
+     <span style="color: #0f172a;">Date de naissance :</span> {{ item.emprunteur[0].date_naissance}}
+    </div>
+      <div><mat-divider></mat-divider>
+        <span style="color: #0f172a;">Telephone :</span> {{ item.emprunteur[0].telephone}}</div>
+      <div><mat-divider></mat-divider>
+      <span style="color: #0f172a;">Genre :</span> {{ item.emprunteur[0].genre}}</div>
+      <div><mat-divider></mat-divider>
+      <span style="color: #0f172a;">Adresse :</span> {{ item.emprunteur[0].adresse}}</div>
+    </mat-expansion-panel></td><!-- Ouvrir les infos de l'emprunteur -->
     <td>{{ item.nomlivre}}</td>
     <td>{{ item.date_emprunt}}</td>
+    <td>{{ item.date_retour }}</td>
+    <td>{{ item.remarque_livre }}</td>
+
 
     <td>
       <button mat-mini-fab
@@ -119,4 +137,28 @@
   </tbody>
 </table>
 </mat-card>
+
+
+<ng-template #info let-modal>
+
+
+  <div class="modal-body">
+    <mat-card class="example-card">
+      <form class="example-form">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>
+          <input  formControlName="nom" />
+      </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+
+      </mat-card-content>
+    </form>
+
+    </mat-card>
+
+  </div>
+</ng-template>
 

@@ -71,16 +71,38 @@
   ],
   "emprunt": [
     {
-      "id": 2,
-      "nomlivre": "kjjoj",
-      "emprunteur": "Moi",
-      "date_emprunt": "2021-11-11"
+      "id": 1,
+      "nomlivre": "ihpi",
+      "emprunteur": [
+        {
+          "id": 0,
+          "nom": "Bakary Togola ",
+          "telephone": "78675752",
+          "date_naissance": "2006-02-02",
+          "genre": "Masculin",
+          "adresse": "Moribabougou"
+        }
+      ],
+      "date_emprunt": "2021-11-12T17:35",
+      "date_retour": "2021-11-17",
+      "remarque_livre": "Livre légèrement déchiré"
     },
     {
-      "id": 3,
+      "id": 2,
       "nomlivre": "mjjpo",
-      "emprunteur": "Moussa Djiga",
-      "date_emprunt": "2021-11-11"
+      "emprunteur": [
+        {
+          "id": 0,
+          "nom": "Drissa Diarra",
+          "telephone": "78635225",
+          "date_naissance": "1996-10-18",
+          "genre": "Masculin",
+          "adresse": "Niamakoro"
+        }
+      ],
+      "date_emprunt": "2021-11-13T17:35",
+      "date_retour": "2021-11-12",
+      "remarque_livre": "Aucun"
     }
   ],
   "user": [
