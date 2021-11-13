@@ -126,7 +126,7 @@ update_livre(){
   this.LivreModel.auteur[0].nom = this.formvalue.value.nom;
   this.LivreModel.auteur[0].discipline = this.formvalue.value.discipline;
   this.LivreModel.auteur[0].nationalite = this.formvalue.value.nationalite;
-  console.log(this.LivreModel.id)
+
   this.api.update_something(this.LivreModel,this.LivreModel.id,this.table).subscribe(res=>{
     console.log(res);
     this.formvalue.reset()
@@ -143,6 +143,8 @@ update_livre(){
 
 open(content : any) {
   this.showadd=true;
+  this.showupdate=false;
+
   this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
     this.closeResult = `Closed with: ${result}`;
   }, (reason) => {
