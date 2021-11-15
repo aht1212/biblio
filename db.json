@@ -1,108 +1,76 @@
 {
   "livre": [
     {
-      "id": 3,
-      "titre": "kjjoj",
-      "isbn": 786876,
-      "langue": "KJHKU",
-      "annee": 2012,
-      "date_parution": "2021-11-03",
+      "id": 1,
+      "titre": "mdr",
+      "isbn": 89798788,
+      "langue": "fr",
+      "annee": 2002,
+      "date_parution": "2021-11-10",
       "img_couverture": "",
       "auteur": [
         {
           "id": 0,
-          "nom": "likp",
-          "discipline": "pokjpi",
-          "nationalite": "kkkkk"
+          "nom": "AAAAAA",
+          "discipline": "RRRR",
+          "nationalite": "ZAZA"
         }
-      ]
-    },
-    {
-      "id": 4,
-      "titre": "mjjpo",
-      "isbn": 7868766,
-      "langue": "lioiu",
-      "annee": 2012,
-      "date_parution": "2011-12-01",
-      "img_couverture": "",
-      "auteur": [
-        {
-          "id": 2,
-          "nom": "J. J. Rousseau",
-          "discipline": "Litterature",
-          "nationalite": "Française"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "titre": "ihpi",
-      "isbn": 7899,
-      "langue": "lhlj",
-      "annee": 2012,
-      "date_parution": "2021-11-01",
-      "img_couverture": "",
-      "auteur": [
-        {
-          "id": 0,
-          "nom": "kjiji",
-          "discipline": "lkoj",
-          "nationalite": "okoj"
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "titre": "kjdezdz",
-      "isbn": 298397,
-      "langue": "jkdj",
-      "annee": 2012,
-      "date_parution": "2007-12-01",
-      "img_couverture": "",
-      "auteur": [
-        {
-          "id": 0,
-          "nom": "Ahmadou Hama TOURE",
-          "discipline": "mlzz",
-          "nationalite": "malienne"
-        }
-      ]
+      ],
+      "publication": "dzdzzd",
+      "exemplaire": 11
     }
   ],
   "emprunt": [
     {
-      "id": 1,
-      "nomlivre": "ihpi",
+      "id": 6,
+      "nomlivre": "mdr",
       "emprunteur": [
         {
           "id": 0,
-          "nom": "Bakary Togola ",
-          "telephone": "78675752",
-          "date_naissance": "2006-02-02",
+          "nom": "ddda",
+          "telephone": "32133221",
+          "date_naissance": "2021-11-02",
           "genre": "Masculin",
-          "adresse": "Moribabougou"
+          "adresse": "gffez"
         }
       ],
-      "date_emprunt": "2021-11-12T17:35",
-      "date_retour": "2021-11-17",
-      "remarque_livre": "Livre légèrement déchiré"
+      "date_emprunt": "2021-11-15T18:24",
+      "date_retour": "2021-11-23",
+      "remarque_livre": "fzfezezfezfezfezfez"
     },
     {
-      "id": 2,
-      "nomlivre": "mjjpo",
+      "id": 7,
+      "nomlivre": "mdr",
       "emprunteur": [
         {
           "id": 0,
-          "nom": "Drissa Diarra",
-          "telephone": "78635225",
-          "date_naissance": "1996-10-18",
-          "genre": "Masculin",
-          "adresse": "Niamakoro"
+          "nom": "🤣🤣🤣🤣",
+          "telephone": "09887878²",
+          "date_naissance": "2021-01-31",
+          "genre": "Feminin",
+          "adresse": "lmqlsmla"
         }
       ],
-      "date_emprunt": "2021-11-13T17:35",
-      "date_retour": "2021-11-12",
-      "remarque_livre": "Aucun"
+      "date_emprunt": null,
+      "date_retour": null,
+      "remarque_livre": "sxsxsx"
+    },
+    {
+      "id": 8,
+      "nomlivre": "mdr",
+      "emprunteur": [
+        {
+          "id": 0,
+          "nom": "😊😊😊😊",
+          "telephone": "8978676",
+          "date_naissance": null,
+          "genre": "Feminin",
+          "adresse": "mooljk"
+        }
+      ],
+      "date_emprunt": null,
+      "date_retour": "2022-12-31",
+      "remarque_livre": "hjaqysgas"
     }
   ],
   "user": [

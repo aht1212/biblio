@@ -37,11 +37,30 @@
       <mat-label>Annee</mat-label>
       <input placeholder="2021" matInput value="2021" formControlName="annee" type="number" min="1" max="2022" step="1" [defaultValue]="2021">
     </mat-form-field></td>
-    <td><mat-form-field class="example-full-width" appearance="fill">
+    <td>
+      <!-- <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Date de parution</mat-label>
       <input matInput formControlName="date_parution" type="date">
-    </mat-form-field></td>
+    </mat-form-field> -->
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Date de parution</mat-label>
+      <input matInput type="date" formControlName="date_parution">
+    </mat-form-field>
+  </td>
   </tr></table>
+  <table class="example-full-width" cellspacing="0"><tr>
+
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Publication</mat-label>
+      <input matInput formControlName="publication">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nombre d'exemplaire</mat-label>
+      <input matInput formControlName="exemplaire" type="number">
+    </mat-form-field></td>
+
+  </tr></table>
+
   <table class="example-full-width" cellspacing="0"><tr>
     <mat-toolbar>
       <div class="modal-header">
@@ -69,7 +88,6 @@
   </tr></table>
 
 
-
 </form>
 
 </div>
@@ -94,7 +112,12 @@
     <th scope="col">Annee</th>
     <th scope="col">Date de parution</th>
     <th scope="col">Auteur</th>
+    <th scope="col">Publication</th>
+    <th scope="col">Exemplaire</th>
     <th scope="col">Action</th>
+
+
+
   </tr>
   </thead>
   <tbody>
@@ -106,6 +129,10 @@
     <td>{{ item.annee}}</td>
     <td>{{ item.date_parution }}</td>
     <td><span *ngFor="let i of item.auteur">{{ i.nom }} </span></td>
+    <td>{{ item.publication }}</td>
+    <td>{{ item.exemplaire }}</td>
+
+
     <td>
       <button mat-mini-fab
       style="background-color: #0f172a ; color: beige;"

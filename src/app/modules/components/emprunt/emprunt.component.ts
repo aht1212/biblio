@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EmpruntModel } from './emprunt.model';
 import { getNameOfDeclaration, textChangeRangeIsUnchanged } from 'typescript';
+import { LivreComponent } from '../livre/livre.component';
+import { LivreModel } from '../livre/livre.model';
 
 @Component({
   selector: 'app-emprunt',
@@ -20,7 +22,25 @@ export class EmpruntComponent implements OnInit {
   closeResult = '';
   auteur !: any
   emprunt !: any
+  exemplaire !: any
 
+  LivreModel : LivreModel = {
+    id: 0,
+    titre: '',
+    isbn: 0,
+    langue: '',
+    annee: '',
+    date_parution: '',
+    img_couverture: '',
+    auteur: [{
+      id :  0,
+      nom: '',
+      discipline: '',
+      nationalite: ''
+    }],
+    publication: '',
+    exemplaire: 0
+  }
 
   EmpruntModel : EmpruntModel = {
     id: 0,
@@ -101,16 +121,18 @@ export class EmpruntComponent implements OnInit {
     this.EmpruntModel.date_retour = this.formvalue.value.date_retour;
     this.EmpruntModel.remarque_livre = this.formvalue.value.remarque_livre;
 
-
-
-
-      // if (condition) {
-
-      // } si exemplaire existe
-
     this.api.post_something(this.EmpruntModel,this.table).subscribe(res=>{
       console.log(res);
       alert('emprunt ajouté');
+
+
+      this.api.search_something(this.livre, this.EmpruntModel.nomlivre, this.LivreModel.titre).subscribe(res=>{
+
+        this.exemplaire = res;
+        // this.exemplaire.exemplaire = this.exemplaire.exemplaire - 1;
+        console.log(this.exemplaire.exemplaire);
+
+      })
       this.formvalue.reset()
       this.get_emprunt()
     },err=>{
@@ -169,6 +191,7 @@ export class EmpruntComponent implements OnInit {
       console.log(res);
       this.formvalue.reset()
       alert('emprunt modifié');
+
       this.get_emprunt()
     },err=>{
       alert('Une erreur')

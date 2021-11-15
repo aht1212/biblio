@@ -29,7 +29,9 @@ export class LivreComponent implements OnInit {
       nom: '',
       discipline: '',
       nationalite: ''
-    }]
+    }],
+    publication: '',
+    exemplaire: 0
   }
   closeResult = '';
 
@@ -48,7 +50,9 @@ export class LivreComponent implements OnInit {
       img_couverture : [''],
       nom : [''],
       discipline : [''],
-      nationalite : ['']
+      nationalite : [''],
+      publication : [''],
+      exemplaire : ['']
     })
     this.get_livre()
   }
@@ -80,6 +84,10 @@ post_livre(){
   this.LivreModel.auteur[0].nom = this.formvalue.value.nom;
   this.LivreModel.auteur[0].discipline = this.formvalue.value.discipline;
   this.LivreModel.auteur[0].nationalite = this.formvalue.value.nationalite;
+  this.LivreModel.publication = this.formvalue.value.publication;
+  this.LivreModel.exemplaire = this.formvalue.value.exemplaire;
+
+
 
 
   this.api.post_something(this.LivreModel,this.table).subscribe(res=>{
@@ -106,6 +114,8 @@ onEdit(content: any, row : any){
   this.formvalue.controls['nom'].setValue(row.auteur[0].nom);
   this.formvalue.controls['discipline'].setValue(row.auteur[0].discipline);
   this.formvalue.controls['nationalite'].setValue(row.auteur[0].nationalite);
+  this.formvalue.controls['publication'].setValue(row.publication);
+  this.formvalue.controls['exemplaire'].setValue(row.exemplaire);
 
   this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
     this.closeResult = `Closed with: ${result}`;
@@ -126,6 +136,10 @@ update_livre(){
   this.LivreModel.auteur[0].nom = this.formvalue.value.nom;
   this.LivreModel.auteur[0].discipline = this.formvalue.value.discipline;
   this.LivreModel.auteur[0].nationalite = this.formvalue.value.nationalite;
+  this.LivreModel.publication = this.formvalue.value.publication;
+  this.LivreModel.exemplaire = this.formvalue.value.exemplaire;
+
+
 
   this.api.update_something(this.LivreModel,this.LivreModel.id,this.table).subscribe(res=>{
     console.log(res);

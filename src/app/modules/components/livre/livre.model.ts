@@ -13,10 +13,7 @@ export interface LivreModel{
     discipline: string
     nationalite: string,
   }]
-
+  publication: string
+  exemplaire: number
   }
 
-// export class Auteur {
-
-
-//   }

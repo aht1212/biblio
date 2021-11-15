@@ -16,7 +16,7 @@ import { UserComponent } from '../components/user/user.component';
 import { EmpruntComponent } from '../components/emprunt/emprunt.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion'
-
+import { MatDatepickerModule } from '@angular/material/datepicker'
 @NgModule({
   declarations: [
     LivreComponent,
@@ -37,12 +37,14 @@ import { MatExpansionModule } from '@angular/material/expansion'
     MatToolbarModule,
     MatDialogModule,
     MatSelectModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDatepickerModule
   ],
   exports:[
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatListModule
+    MatListModule,
+    MatDatepickerModule
 
   ]
 })

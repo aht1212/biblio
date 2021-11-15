@@ -46,5 +46,11 @@ export class ApiService {
     }))
   }
 
+  search_something(table : string, search: string, attribut: string){
+    return this.http.request('GET',"http://localhost:3000/"+table+"?"+attribut+"="+search)
+    .pipe(map((res:any)=>{
+      return res
+    }))
+  }
 
 }
