@@ -11,8 +11,11 @@ export interface EmpruntModel{
     adresse: string
   }]
   date_emprunt : string
-  date_retour : string
+  date_echeance : string
   remarque_livre : string
+  rendu : boolean
+  date_retour: string
+
 
   }
 

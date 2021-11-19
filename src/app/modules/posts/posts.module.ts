@@ -17,11 +17,13 @@ import { EmpruntComponent } from '../components/emprunt/emprunt.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatDatepickerModule } from '@angular/material/datepicker'
+import { HistoriqueComponent } from '../components/historique/historique.component';
 @NgModule({
   declarations: [
     LivreComponent,
     UserComponent,
-    EmpruntComponent
+    EmpruntComponent,
+    HistoriqueComponent
   ],
   imports: [
     CommonModule,

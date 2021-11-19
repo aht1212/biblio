@@ -10,11 +10,13 @@ import { HomeComponent } from './modules/components/home/home.component';
 import { EmpruntComponent } from './modules/components/emprunt/emprunt.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HistoriqueComponent } from './modules/components/historique/historique.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+
 
   ],
   imports: [

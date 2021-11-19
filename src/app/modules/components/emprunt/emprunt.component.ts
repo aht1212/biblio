@@ -53,9 +53,11 @@ export class EmpruntComponent implements OnInit {
       genre : '',
       adresse: ''
     }],
-        date_emprunt: '',
-        date_retour: '',
-        remarque_livre: ''
+      date_emprunt: '',
+      date_echeance: '',
+      remarque_livre: '',
+      rendu: false,
+      date_retour: ''
   }
 
 
@@ -74,8 +76,10 @@ export class EmpruntComponent implements OnInit {
       genre: [''],
       adresse: [''],
       date_emprunt: [''],
+      date_echeance: [''],
+      remarque_livre: [''],
+      rendu : [''],
       date_retour: [''],
-      remarque_livre: ['']
 
     })
 
@@ -84,7 +88,7 @@ export class EmpruntComponent implements OnInit {
   }
 
  get_nameLivre(){
-    this.api.get_something(this.livre).subscribe(res=>{
+   this.api.get_something(this.livre)    .subscribe(res=>{
     this.titrelivre = res
     })
 
@@ -118,8 +122,10 @@ export class EmpruntComponent implements OnInit {
     this.EmpruntModel.emprunteur[0].adresse = this.formvalue.value.adresse;
 
     this.EmpruntModel.date_emprunt = this.formvalue.value.date_emprunt;
-    this.EmpruntModel.date_retour = this.formvalue.value.date_retour;
+    this.EmpruntModel.date_echeance = this.formvalue.value.date_echeance;
     this.EmpruntModel.remarque_livre = this.formvalue.value.remarque_livre;
+
+    this.EmpruntModel.rendu = false
 
     this.api.post_something(this.EmpruntModel,this.table).subscribe(res=>{
       console.log(res);
@@ -129,8 +135,17 @@ export class EmpruntComponent implements OnInit {
       this.api.search_something(this.livre, this.EmpruntModel.nomlivre, this.LivreModel.titre).subscribe(res=>{
 
         this.exemplaire = res;
-        // this.exemplaire.exemplaire = this.exemplaire.exemplaire - 1;
-        console.log(this.exemplaire.exemplaire);
+
+        this.exemplaire[0].exemplaire--;
+        if (this.exemplaire[0].exemplaire != 0) {
+
+        this.api.update_something(this.exemplaire[0] , this.exemplaire[0].id, this.livre).subscribe(res=>{
+
+        })
+      }else{
+        alert('Pas de livre disponible!!!!!!')
+      }
+
 
       })
       this.formvalue.reset()
@@ -158,7 +173,7 @@ export class EmpruntComponent implements OnInit {
     this.formvalue.controls['adresse'].setValue(row.emprunteur[0].adresse);
 
     this.formvalue.controls['date_emprunt'].setValue(row.date_emprunt);
-    this.formvalue.controls['date_retour'].setValue(row.date_retour);
+    this.formvalue.controls['date_echeance'].setValue(row.date_echeance);
     this.formvalue.controls['remarque_livre'].setValue(row.remarque_livre);
 
 
@@ -183,7 +198,7 @@ export class EmpruntComponent implements OnInit {
     this.EmpruntModel.emprunteur[0].adresse = this.formvalue.value.adresse;
 
     this.EmpruntModel.date_emprunt = this.formvalue.value.date_emprunt;
-    this.EmpruntModel.date_retour = this.formvalue.value.date_retour;
+    this.EmpruntModel.date_echeance = this.formvalue.value.date_echeance;
     this.EmpruntModel.remarque_livre = this.formvalue.value.remarque_livre;
 
 

@@ -1,76 +1,80 @@
 {
   "livre": [
     {
-      "id": 1,
-      "titre": "mdr",
-      "isbn": 89798788,
+      "id": 2,
+      "titre": "hahah",
+      "isbn": 1361836,
       "langue": "fr",
-      "annee": 2002,
-      "date_parution": "2021-11-10",
+      "annee": 2001,
+      "date_parution": "2021-11-01",
       "img_couverture": "",
       "auteur": [
         {
           "id": 0,
-          "nom": "AAAAAA",
-          "discipline": "RRRR",
-          "nationalite": "ZAZA"
+          "nom": "Ahmadou Hama TOURE",
+          "discipline": "eng",
+          "nationalite": "A"
         }
       ],
-      "publication": "dzdzzd",
-      "exemplaire": 11
+      "publication": "dddd",
+      "exemplaire": 1
     }
   ],
   "emprunt": [
     {
-      "id": 6,
+      "id": 2,
       "nomlivre": "mdr",
       "emprunteur": [
         {
           "id": 0,
-          "nom": "ddda",
-          "telephone": "32133221",
-          "date_naissance": "2021-11-02",
-          "genre": "Masculin",
-          "adresse": "gffez"
-        }
-      ],
-      "date_emprunt": "2021-11-15T18:24",
-      "date_retour": "2021-11-23",
-      "remarque_livre": "fzfezezfezfezfezfez"
-    },
-    {
-      "id": 7,
-      "nomlivre": "mdr",
-      "emprunteur": [
-        {
-          "id": 0,
-          "nom": "🤣🤣🤣🤣",
-          "telephone": "09887878²",
-          "date_naissance": "2021-01-31",
-          "genre": "Feminin",
-          "adresse": "lmqlsmla"
+          "nom": "bala",
+          "telephone": "890909",
+          "date_naissance": null,
+          "genre": null,
+          "adresse": null
         }
       ],
       "date_emprunt": null,
       "date_retour": null,
-      "remarque_livre": "sxsxsx"
+      "remarque_livre": null,
+      "rendu": true
     },
     {
-      "id": 8,
+      "id": 3,
       "nomlivre": "mdr",
       "emprunteur": [
         {
           "id": 0,
-          "nom": "😊😊😊😊",
-          "telephone": "8978676",
-          "date_naissance": null,
-          "genre": "Feminin",
-          "adresse": "mooljk"
+          "nom": "klsx,s",
+          "telephone": "98977877",
+          "date_naissance": "2021-11-17",
+          "genre": "Masculin",
+          "adresse": "😊😊😊😊"
         }
       ],
-      "date_emprunt": null,
-      "date_retour": "2022-12-31",
-      "remarque_livre": "hjaqysgas"
+      "date_emprunt": "2021-11-17T18:56",
+      "date_retour": "2021-11-10",
+      "remarque_livre": null,
+      "rendu": false
+    },
+    {
+      "id": 4,
+      "nomlivre": "hahah",
+      "emprunteur": [
+        {
+          "id": 0,
+          "nom": "😊😊😊😊",
+          "telephone": "98977877",
+          "date_naissance": "2021-11-07",
+          "genre": "Masculin",
+          "adresse": "😊😊😊😊"
+        }
+      ],
+      "date_emprunt": "2021-11-19T14:20",
+      "date_echeance": "2021-11-21",
+      "remarque_livre": "mooo",
+      "rendu": false,
+      "date_retour": ""
     }
   ],
   "user": [

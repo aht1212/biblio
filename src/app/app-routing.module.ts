@@ -8,6 +8,7 @@ import { LivreComponent } from './modules/components/livre/livre.component';
 import { LoginComponent } from './modules/components/login/login.component';
 import { FullwidthComponent } from './layout/fullwidth/fullwidth.component';
 import { AuthGuard } from './shared/auth/auth.guard';
+import { HistoriqueComponent } from './modules/components/historique/historique.component';
 
 const routes: Routes = [
   {path: '',
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'emprunt',
     component: EmpruntComponent
+  },
+  {
+    path: 'historique',
+    component: HistoriqueComponent
   }]
 },
 {path: '',

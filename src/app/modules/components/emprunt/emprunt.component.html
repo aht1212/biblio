@@ -55,7 +55,7 @@
     <label for="floatingInput">Date de de l'emprunt</label>
   </div>
   <div class="form-floating col-md-6">
-    <input type="date" class="form-control" id="floatingInput" placeholder="Date de de retour prévu" formControlName="date_retour">
+    <input type="date" class="form-control" id="floatingInput" placeholder="Date de de retour prévu" formControlName="date_echeance">
     <label for="floatingInput">Date de de retour prévu</label>
   </div>
 
@@ -94,8 +94,8 @@
     <th scope="col">Action</th>
   </tr>
   </thead>
-  <tbody>
-  <tr *ngFor="let item of emprunt">
+  <tbody *ngFor="let item of emprunt" >
+  <tr *ngIf="item.rendu != true">
     <td>{{ item.id}}</td>
     <td><mat-expansion-panel>
       <mat-panel-title></mat-panel-title>
@@ -112,7 +112,7 @@
     </mat-expansion-panel></td><!-- Ouvrir les infos de l'emprunteur -->
     <td>{{ item.nomlivre}}</td>
     <td>{{ item.date_emprunt}}</td>
-    <td>{{ item.date_retour }}</td>
+    <td>{{ item.date_echeance }}</td>
     <td>{{ item.remarque_livre }}</td>
 
 
@@ -132,7 +132,6 @@
         <mat-icon>delete</mat-icon>
       </button>
     </td>
-
   </tr>
   </tbody>
 </table>
