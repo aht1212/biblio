@@ -18,6 +18,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { HistoriqueComponent } from '../components/historique/historique.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 @NgModule({
   declarations: [
     LivreComponent,
@@ -40,7 +42,9 @@ import { HistoriqueComponent } from '../components/historique/historique.compone
     MatDialogModule,
     MatSelectModule,
     MatExpansionModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatSlideToggleModule
+
   ],
   exports:[
     MatFormFieldModule,

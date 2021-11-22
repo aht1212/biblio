@@ -23,6 +23,7 @@ export class EmpruntComponent implements OnInit {
   auteur !: any
   emprunt !: any
   exemplaire !: any
+  lol !: any
 
   LivreModel : LivreModel = {
     id: 0,
@@ -48,7 +49,7 @@ export class EmpruntComponent implements OnInit {
     emprunteur : [{
       id: 0,
       nom: '',
-      telephone : 77777777,
+      telephone : 0,
       date_naissance: '',
       genre : '',
       adresse: ''
@@ -88,7 +89,7 @@ export class EmpruntComponent implements OnInit {
   }
 
  get_nameLivre(){
-   this.api.get_something(this.livre)    .subscribe(res=>{
+   this.api.get_something(this.livre).subscribe(res=>{
     this.titrelivre = res
     })
 
@@ -127,32 +128,46 @@ export class EmpruntComponent implements OnInit {
 
     this.EmpruntModel.rendu = false
 
-    this.api.post_something(this.EmpruntModel,this.table).subscribe(res=>{
-      console.log(res);
-      alert('emprunt ajouté');
 
 
-      this.api.search_something(this.livre, this.EmpruntModel.nomlivre, this.LivreModel.titre).subscribe(res=>{
 
-        this.exemplaire = res;
+console.log(this.lol)
 
-        this.exemplaire[0].exemplaire--;
-        if (this.exemplaire[0].exemplaire != 0) {
+    this.api.search_something(this.livre, this.EmpruntModel.nomlivre).subscribe(res=>{
 
-        this.api.update_something(this.exemplaire[0] , this.exemplaire[0].id, this.livre).subscribe(res=>{
+      this.exemplaire = res;
 
+      console.log(this.EmpruntModel.nomlivre)
+
+
+        console.log(this.titrelivre.titre)
+      if (this.exemplaire[0].exemplaire != 0) {
+
+      this.exemplaire[0].exemplaire--;
+      this.api.update_something(this.exemplaire[0] , this.exemplaire[0].id, this.livre).subscribe(res=>{
+
+
+        this.api.post_something(this.EmpruntModel,this.table).subscribe(res=>{
+          console.log(res);
+          alert('emprunt ajouté');
+
+
+
+          this.formvalue.reset()
+          this.get_emprunt()
+        },err=>{
+          alert('Une erreur')
         })
-      }else{
-        alert('Pas de livre disponible!!!!!!')
-      }
-
-
       })
-      this.formvalue.reset()
-      this.get_emprunt()
-    },err=>{
-      alert('Une erreur')
+    }else{
+      alert('Pas de livre disponible!')
+    }
+
+
     })
+
+
+
 
 
   }
@@ -186,6 +201,21 @@ export class EmpruntComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
+  // validate(content : any, row: any){
+  //   this.showupdate=true;
+  //   this.showadd=false;
+
+  //   this.EmpruntModel.id = row.id
+  //   this.formvalue.controls['date_retour'].setValue(row.date_retour);
+  //   this.formvalue.controls['rendu'].setValue(row.rendu);
+
+  //   this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+  //     this.closeResult = `Closed with: ${result}`;
+  //   }, (reason) => {
+  //     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+  //   });
+
+  // }
 
   update_emprunt(){
 
@@ -200,6 +230,8 @@ export class EmpruntComponent implements OnInit {
     this.EmpruntModel.date_emprunt = this.formvalue.value.date_emprunt;
     this.EmpruntModel.date_echeance = this.formvalue.value.date_echeance;
     this.EmpruntModel.remarque_livre = this.formvalue.value.remarque_livre;
+    this.EmpruntModel.date_retour = this.formvalue.value.date_retour;
+    this.EmpruntModel.rendu = this.formvalue.value.rendu;
 
 
     this.api.update_something(this.EmpruntModel,this.EmpruntModel.id,this.table).subscribe(res=>{

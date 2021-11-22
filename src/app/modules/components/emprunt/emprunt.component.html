@@ -91,7 +91,7 @@
     <th scope="col">Date de retour</th>
     <th scope="col">Remarque sur livre</th>
 
-    <th scope="col">Action</th>
+    <th scope="col" class="">Action</th>
   </tr>
   </thead>
   <tbody *ngFor="let item of emprunt" >
@@ -116,7 +116,7 @@
     <td>{{ item.remarque_livre }}</td>
 
 
-    <td>
+    <td class="action">
       <button mat-mini-fab
       style="background-color: #0f172a ; color: beige;"
       (click)="onEdit(content, item)">
@@ -129,7 +129,15 @@
       (click)="delete_emprunt(item)"
 
       >
+
         <mat-icon>delete</mat-icon>
+      </button>&nbsp;
+
+      <button mat-mini-fab
+      style="background-color: #00a321 ; color: beige;"
+      (click)="onEdit(validate, item)"
+      >
+        <mat-icon>done</mat-icon>
       </button>
     </td>
   </tr>
@@ -138,26 +146,34 @@
 </mat-card>
 
 
-<ng-template #info let-modal>
-
-
-  <div class="modal-body">
-    <mat-card class="example-card">
-      <form class="example-form">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>
-          <input  formControlName="nom" />
-      </mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-
-
-      </mat-card-content>
-    </form>
-
-    </mat-card>
+<ng-template #validate let-modal>
+  <mat-toolbar>
+  <div class="modal-header">
+    <h1 mat-dialog-title>Emprunt</h1>
 
   </div>
+</mat-toolbar>
+
+
+<div class="modal-body">
+<form class="example-form row g-3" [formGroup]="formvalue" >
+
+  &nbsp;&nbsp;&nbsp;&nbsp;<div class="form-check form-switch">
+    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" value="true" formControlName="rendu" checked>
+    <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Rendu</label>
+  </div>
+  <div class="form-floating col-md-6">
+    <input class="form-control" type="datetime-local" id="floatingInput" placeholder="Date de retour" formControlName="date_retour">
+    <label for="floatingInput">Date de retour</label>
+  </div>
+
+  </form>
+
+  <div class="modal-footer">
+    <td><button id="updateform" mat-raised-button type="submit" (click)="update_emprunt()" *ngIf="showupdate">Valider</button>
+    </td>
+  </div>
+</div>
 </ng-template>
+
 

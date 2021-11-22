@@ -17,7 +17,45 @@
         }
       ],
       "publication": "dddd",
-      "exemplaire": 1
+      "exemplaire": 0
+    },
+    {
+      "id": 3,
+      "titre": "Orgueil et préjugé",
+      "isbn": 86785576,
+      "langue": "Anglais",
+      "annee": 1867,
+      "date_parution": "2017-02-04",
+      "img_couverture": "",
+      "auteur": [
+        {
+          "id": 0,
+          "nom": "Jane Austin",
+          "discipline": "Littérature",
+          "nationalite": "Anglais"
+        }
+      ],
+      "publication": "xsxss",
+      "exemplaire": 0
+    },
+    {
+      "id": 4,
+      "titre": "blablacar",
+      "isbn": 63587625,
+      "langue": "FR",
+      "annee": 2021,
+      "date_parution": "2003-01-16",
+      "img_couverture": "",
+      "auteur": [
+        {
+          "id": 0,
+          "nom": "mde",
+          "discipline": "moss",
+          "nationalite": "lol"
+        }
+      ],
+      "publication": "shsa",
+      "exemplaire": 0
     }
   ],
   "emprunt": [
@@ -53,40 +91,152 @@
         }
       ],
       "date_emprunt": "2021-11-17T18:56",
-      "date_retour": "2021-11-10",
       "remarque_livre": null,
-      "rendu": false
+      "rendu": true,
+      "date_retour": "2021-11-22T17:13"
     },
     {
       "id": 4,
-      "nomlivre": "hahah",
+      "nomlivre": null,
+      "emprunteur": [
+        {
+          "id": 0,
+          "nom": null,
+          "telephone": null,
+          "date_naissance": null,
+          "genre": null,
+          "adresse": null
+        }
+      ],
+      "date_emprunt": null,
+      "date_echeance": null,
+      "remarque_livre": null,
+      "rendu": true,
+      "date_retour": "2021-11-22T17:15"
+    },
+    {
+      "id": 5,
+      "nomlivre": "Orgueil et préjugé",
       "emprunteur": [
         {
           "id": 0,
           "nom": "😊😊😊😊",
           "telephone": "98977877",
-          "date_naissance": "2021-11-07",
+          "date_naissance": "2021-11-20",
           "genre": "Masculin",
           "adresse": "😊😊😊😊"
         }
       ],
-      "date_emprunt": "2021-11-19T14:20",
-      "date_echeance": "2021-11-21",
-      "remarque_livre": "mooo",
+      "date_emprunt": "2021-11-19T15:08",
+      "date_echeance": "2021-11-23",
+      "remarque_livre": "deeddd",
+      "rendu": false,
+      "date_retour": ""
+    },
+    {
+      "id": 6,
+      "nomlivre": "blablacar",
+      "emprunteur": [
+        {
+          "id": 0,
+          "nom": "😊😊😊😊",
+          "telephone": "98977877",
+          "date_naissance": "2021-11-19",
+          "genre": null,
+          "adresse": null
+        }
+      ],
+      "date_emprunt": null,
+      "date_echeance": null,
+      "remarque_livre": null,
+      "rendu": false,
+      "date_retour": ""
+    },
+    {
+      "id": 7,
+      "nomlivre": "blablacar",
+      "emprunteur": [
+        {
+          "id": 0,
+          "nom": "😊😊😊😊",
+          "telephone": null,
+          "date_naissance": null,
+          "genre": null,
+          "adresse": null
+        }
+      ],
+      "date_emprunt": null,
+      "date_echeance": null,
+      "remarque_livre": null,
+      "rendu": false,
+      "date_retour": ""
+    },
+    {
+      "id": 8,
+      "nomlivre": "Orgueil et préjugé",
+      "emprunteur": [
+        {
+          "id": 0,
+          "nom": "xzzszsz",
+          "telephone": "98977877",
+          "date_naissance": null,
+          "genre": null,
+          "adresse": null
+        }
+      ],
+      "date_emprunt": null,
+      "date_echeance": null,
+      "remarque_livre": null,
+      "rendu": false,
+      "date_retour": ""
+    },
+    {
+      "id": 9,
+      "nomlivre": "Orgueil et préjugé",
+      "emprunteur": [
+        {
+          "id": 0,
+          "nom": "😊😊",
+          "telephone": "98977877",
+          "date_naissance": "2021-11-06",
+          "genre": "Feminin",
+          "adresse": null
+        }
+      ],
+      "date_emprunt": null,
+      "date_echeance": null,
+      "remarque_livre": null,
+      "rendu": false,
+      "date_retour": ""
+    },
+    {
+      "id": 10,
+      "nomlivre": "Orgueil et préjugé",
+      "emprunteur": [
+        {
+          "id": 0,
+          "nom": "😊😊",
+          "telephone": "98977877",
+          "date_naissance": null,
+          "genre": null,
+          "adresse": null
+        }
+      ],
+      "date_emprunt": null,
+      "date_echeance": null,
+      "remarque_livre": null,
       "rendu": false,
       "date_retour": ""
     }
   ],
-  "user": [
-    {
-      "id": 1,
-      "nom": "TOURE",
-      "prenom": "Ahmadou",
-      "email": "toureamadou1@gmail.com",
-      "poste": "mdr",
-      "role": "mdd",
-      "statut": "admin",
-      "pass": "lol"
-    }
-  ]
+  "user": {
+    "id": 1,
+    "nom": "TOURE",
+    "prenom": "Ahmadou",
+    "email": "toureamadou1@gmail.com",
+    "poste": "mdr",
+    "role": "mdd",
+    "statut": "admin",
+    "pass": "lol"
+  }
 }
