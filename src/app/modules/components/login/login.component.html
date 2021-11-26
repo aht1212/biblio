@@ -7,13 +7,13 @@
   <tr>
   <td>  <mat-form-field appearance="fill" fxFlexFill>
     <mat-label>Mot de passe</mat-label>
-    <input matInput type="password" fxFlexFill formControlName="pass">
+    <input matInput type="password" fxFlexFill formControlName="password">
   </mat-form-field></td>
 </tr>
 </table>
 <br>
 <div fxLayoutAlign="center end" fxFlexFill>
 <button mat-raised-button type="submit" color="primary" fxFlexFill fxLayoutAlign="center end" (click)="connexion()">Connexion </button>
-
+<!-- <mat-error *ngIf="wrongCredentials">Invalid credentials. Please Try again!!!!</mat-error> -->
 </div>
 </form>

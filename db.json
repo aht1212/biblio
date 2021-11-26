@@ -229,14 +229,16 @@
       "date_retour": ""
     }
   ],
-  "user": {
-    "id": 1,
-    "nom": "TOURE",
-    "prenom": "Ahmadou",
-    "email": "toureamadou1@gmail.com",
-    "poste": "mdr",
-    "role": "mdd",
-    "statut": "admin",
-    "pass": "lol"
-  }
+  "user": [
+    {
+      "id": 0,
+      "nom": "TOURE",
+      "prenom": "Ahmadou",
+      "email": "toureamadou1@gmail.com",
+      "poste": "DG",
+      "role": "Admin",
+      "statut": "actif",
+      "pass": "mdr"
+    }
+  ]
 }
