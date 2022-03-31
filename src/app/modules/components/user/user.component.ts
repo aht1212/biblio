@@ -17,16 +17,16 @@ export class UserComponent implements OnInit {
   user !: any
   showadd !: boolean
   showupdate !: boolean
-  UserModel : UserModel = {
-
+  userModel: UserModel = {
     id: 0,
     nom: '',
     prenom: '',
-    email: '',
     poste: '',
     role: '',
     statut: '',
-    pass: ''
+    login:[{
+    email: '',
+    pass: ''}]
 
   }
   closeResult = '';
@@ -41,10 +41,10 @@ export class UserComponent implements OnInit {
       id: 0,
       nom : [''],
       prenom : [''],
-      email : [''],
       poste : [''],
       role : [''],
       statut : [''],
+      email : [''],
       pass : [''],
 
     })
@@ -70,19 +70,20 @@ export class UserComponent implements OnInit {
   }
 
   post_user(){
-    this.UserModel.nom = this.formvalue.value.nom;
-    this.UserModel.prenom = this.formvalue.value.prenom;
-    this.UserModel.email = this.formvalue.value.email;
-    this.UserModel.poste = this.formvalue.value.poste;
-    this.UserModel.role = this.formvalue.value.role;
-    this.UserModel.statut = this.formvalue.value.statut;
-    this.UserModel.pass = this.formvalue.value.pass;
+
+    this.userModel.nom = this.formvalue.value.nom;
+    this.userModel.prenom = this.formvalue.value.prenom;
+    this.userModel.poste = this.formvalue.value.poste;
+    this.userModel.role = this.formvalue.value.role;
+    this.userModel.statut = this.formvalue.value.statut;
+    this.userModel.login[0].email = this.formvalue.value.email;
+    this.userModel.login[0].pass = this.formvalue.value.pass;
 
 
 
 
 
-    this.api.post_something(this.UserModel,this.table).subscribe(res=>{
+    this.api.post_something(this.userModel,this.table).subscribe(res=>{
       console.log(res);
       alert('user ajouté');
       this.formvalue.reset()
@@ -98,7 +99,7 @@ export class UserComponent implements OnInit {
     this.showadd=false;
 
 
-    this.UserModel.id = row.id
+    this.userModel.id = row.id
     this.formvalue.controls['nom'].setValue(row.nom);
     this.formvalue.controls['prenom'].setValue(row.prenom);
     this.formvalue.controls['email'].setValue(row.email);
@@ -117,17 +118,17 @@ export class UserComponent implements OnInit {
 
 
   update_user(){
-    this.UserModel.nom = this.formvalue.value.nom;
-    this.UserModel.prenom = this.formvalue.value.prenom;
-    this.UserModel.email = this.formvalue.value.email;
-    this.UserModel.poste = this.formvalue.value.poste;
-    this.UserModel.role = this.formvalue.value.role;
-    this.UserModel.statut = this.formvalue.value.statut;
-    this.UserModel.pass = this.formvalue.value.pass;
+    this.userModel.nom = this.formvalue.value.nom;
+    this.userModel.prenom = this.formvalue.value.prenom;
+    this.userModel.poste = this.formvalue.value.poste;
+    this.userModel.role = this.formvalue.value.role;
+    this.userModel.statut = this.formvalue.value.statut;
+    this.userModel.login[0].email = this.formvalue.value.email;
+    this.userModel.login[0].pass = this.formvalue.value.pass;
 
 
-    console.log(this.UserModel.id)
-    this.api.update_something(this.UserModel,this.UserModel.id,this.table).subscribe(res=>{
+    console.log(this.userModel.id)
+    this.api.update_something(this.userModel,this.userModel.id,this.table).subscribe(res=>{
       console.log(res);
       this.formvalue.reset()
       alert('user modifié');

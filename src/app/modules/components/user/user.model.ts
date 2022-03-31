@@ -2,9 +2,11 @@ export interface UserModel{
   id : number
   nom : string
   prenom : string
-  email : string
+  login: [{
+    email : string
+    pass : string
+  }]
   poste : string
   role : string
   statut : string
-  pass : string
 }

@@ -4,8 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { UserModel } from '../user/user.model';
 import { Router, Routes } from '@angular/router';
-// import { SessionLoginService } from 'src/app/shared/sessionLogin/session-login.service';
-import { Token } from '@angular/compiler';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -31,8 +29,10 @@ export class LoginComponent implements OnInit {
     poste: '',
     role: '',
     statut: '',
+    login:[{
     email: '',
-    pass: ''
+    pass: ''}]
+
   }
 
   constructor(private api : ApiService,
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
     this.loginform = this.formbuilder.group({
-      email : ['', [Validators.required]],
+      email : ['', [Validators.required, Validators.email]],
       password : ['', [Validators.required]],
 
     })
@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
   }
 
 connexion(): void{
-  if (this.loginform.valid) {
+  if (this.loginform) {
 
 
  this.auth.login(this.loginform.value).subscribe(result=>{

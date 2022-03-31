@@ -115,82 +115,6 @@
       "date_retour": "2021-11-22T17:15"
     },
     {
-      "id": 5,
-      "nomlivre": "Orgueil et préjugé",
-      "emprunteur": [
-        {
-          "id": 0,
-          "nom": "😊😊😊😊",
-          "telephone": "98977877",
-          "date_naissance": "2021-11-20",
-          "genre": "Masculin",
-          "adresse": "😊😊😊😊"
-        }
-      ],
-      "date_emprunt": "2021-11-19T15:08",
-      "date_echeance": "2021-11-23",
-      "remarque_livre": "deeddd",
-      "rendu": false,
-      "date_retour": ""
-    },
-    {
-      "id": 6,
-      "nomlivre": "blablacar",
-      "emprunteur": [
-        {
-          "id": 0,
-          "nom": "😊😊😊😊",
-          "telephone": "98977877",
-          "date_naissance": "2021-11-19",
-          "genre": null,
-          "adresse": null
-        }
-      ],
-      "date_emprunt": null,
-      "date_echeance": null,
-      "remarque_livre": null,
-      "rendu": false,
-      "date_retour": ""
-    },
-    {
-      "id": 7,
-      "nomlivre": "blablacar",
-      "emprunteur": [
-        {
-          "id": 0,
-          "nom": "😊😊😊😊",
-          "telephone": null,
-          "date_naissance": null,
-          "genre": null,
-          "adresse": null
-        }
-      ],
-      "date_emprunt": null,
-      "date_echeance": null,
-      "remarque_livre": null,
-      "rendu": false,
-      "date_retour": ""
-    },
-    {
-      "id": 8,
-      "nomlivre": "Orgueil et préjugé",
-      "emprunteur": [
-        {
-          "id": 0,
-          "nom": "xzzszsz",
-          "telephone": "98977877",
-          "date_naissance": null,
-          "genre": null,
-          "adresse": null
-        }
-      ],
-      "date_emprunt": null,
-      "date_echeance": null,
-      "remarque_livre": null,
-      "rendu": false,
-      "date_retour": ""
-    },
-    {
       "id": 9,
       "nomlivre": "Orgueil et préjugé",
       "emprunteur": [
@@ -227,6 +151,25 @@
       "remarque_livre": null,
       "rendu": false,
       "date_retour": ""
+    },
+    {
+      "id": 11,
+      "nomlivre": "MOOO",
+      "emprunteur": [
+        {
+          "id": 0,
+          "nom": "Diallo",
+          "telephone": "89777676",
+          "date_naissance": "1996-09-04",
+          "genre": "Masculin",
+          "adresse": "Kati"
+        }
+      ],
+      "date_emprunt": "2021-12-14T17:02",
+      "date_echeance": "2021-12-15",
+      "remarque_livre": "Déchiré",
+      "rendu": true,
+      "date_retour": "2021-12-14T17:04"
     }
   ],
   "user": [
@@ -234,11 +177,29 @@
       "id": 0,
       "nom": "TOURE",
       "prenom": "Ahmadou",
-      "email": "toureamadou1@gmail.com",
+      "login": [
+        {
+          "email": "toureamadou1@gmail.com",
+          "pass": "mdr"
+        }
+      ],
       "poste": "DG",
       "role": "Admin",
-      "statut": "actif",
-      "pass": "mdr"
+      "statut": "actif"
+    },
+    {
+      "id": 1,
+      "nom": "Balkissa",
+      "prenom": "Cisse",
+      "poste": "Secretaire",
+      "role": "Admin",
+      "statut": "Actif",
+      "login": [
+        {
+          "email": "balkissacisse@gmail.com",
+          "pass": "lol"
+        }
+      ]
     }
   ]
 }

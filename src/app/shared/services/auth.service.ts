@@ -1,4 +1,5 @@
 
+import { sha1 } from '@angular/compiler/src/i18n/digest';
 import { Injectable, InjectionToken } from '@angular/core';
 import { Router } from '@angular/router';
 import {  Observable, of, throwError } from 'rxjs';
@@ -37,13 +38,18 @@ export class AuthService {
   }
 
   login({ email, password }: any): Observable<any> {
-    this.api.get_something('user').subscribe(res=>{
+    this.api.get_something('user?q='+email).subscribe(res=>{
       this.user = res
       return this.user
+
+
       })
-      if (email === this.user.email && password === this.user.pass) {
-        this.setToken('abcdefghijklmnopqrstuvwxyz');
-        return of({ name: 'Admin', email: 'lol'});
+      if (email === this.user[0].login[0].email && password === this.user[0].login[0].pass) {
+        this.setToken('8757565676545678765');
+        localStorage.setItem('token', email.token)
+
+
+        return of({ name: this.user[0].nom, prenom: this.user[0].prenom});
       }else{
       return throwError(new Error('Failed to login'));
     }
